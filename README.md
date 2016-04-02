@@ -5,10 +5,10 @@ Common dates utilities.
 The method `DateUtils.getDateFromDayNumber(day, isLeapYear)` returns Spanish date format for a day of the year.
 ```
 System.Out.println(DateUtils.getDateFromDayNumber(60, false));
-// Should print "1 de marzo"
+// Prints "1 de marzo"
 
 System.Out.println(DateUtils.getDateFromDayNumber(60, true));
-// Should print "29 de febrero"
+// Prints "29 de febrero"
 ```
 
 # Jar building
