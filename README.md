@@ -18,5 +18,7 @@ $ gradle build
 ```
 Builds date.jar in build/lib directory.
 
+Also, you can check tests and code coverage with `gradle test` and `gradle jacocoTestReport` commands. Reports are created in build/reports folder.
+
 
 
