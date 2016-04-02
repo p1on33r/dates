@@ -23,7 +23,7 @@ Also, you can check tests and code coverage with `gradle test` and `gradle jacoc
 # Executable
 Command
 ```
-$ java -cp dates.jar net.dates.SpanishDate <day of year> <isLeap>
+java -cp dates.jar net.dates.SpanishDate 322 false
 ```
 Prints
 ```
