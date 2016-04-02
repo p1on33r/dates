@@ -9,10 +9,21 @@ public class DateUtils {
 	
 	private static final int JANUARY_INDEX = 0;
 	private static final int FEBRUARY_INDEX = 1;
-	private static final Integer[] MONTH_LAST_DAYS = new Integer[]{31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 
-		365};
-	private static final String[] MONTH_NAMES = new String[]{"enero", "febrero", "marzo", "abril", "mayo", "junio", 
-		"julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"};
+
+	private static final Month[] MONTHS = new Month[] {
+		new Month("enero", 31),
+		new Month("febrero", 59),
+		new Month("marzo", 90),
+		new Month("abril", 120),
+		new Month("mayo", 151),
+		new Month("junio", 181),
+		new Month("julio", 212),
+		new Month("agosto", 243),
+		new Month("septiembre", 273),
+		new Month("octubre", 304),
+		new Month("noviembre", 334),
+		new Month("diciembre", 365)
+	};
 
 	/**
 	 * Accepts a day number and returns the date in Spanish.
@@ -32,8 +43,8 @@ public class DateUtils {
 		}
 		
 		Integer dayOfMonth = getDayOfMonth(day, monthIndex, isLeap);
-		
-		return dayOfMonth + " de " + MONTH_NAMES[monthIndex];
+
+		return dayOfMonth + " de " + MONTHS[monthIndex].getName();
 	}
 
 	/**
@@ -47,8 +58,8 @@ public class DateUtils {
 		if (isLeap && monthIndex >= FEBRUARY_INDEX) {
 			correction = 1;
 		}
-		
-		return MONTH_LAST_DAYS[monthIndex] + correction;
+
+		return MONTHS[monthIndex].getLastDay() + correction;
 	}
 	
 
@@ -62,7 +73,7 @@ public class DateUtils {
 	private static Integer getDayOfMonth(final Integer day, int monthIndex, final Boolean isLeap) {
 		Integer dayOfMonth = day;
 		if (monthIndex > JANUARY_INDEX) {
-			dayOfMonth -= MONTH_LAST_DAYS[monthIndex - 1];
+			dayOfMonth -= MONTHS[monthIndex - 1].getLastDay();
 			if (isLeap && monthIndex > FEBRUARY_INDEX) {
 				dayOfMonth -= 1;
 			}

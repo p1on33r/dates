@@ -11,4 +11,12 @@ System.Out.println(DateUtils.getDateFromDayNumber(60, true));
 // Should print "29 de febrero"
 ```
 
+# Jar building
+Gradle is recommended for jar building. Command
+```
+$ gradle build
+```
+Builds date.jar in build/lib directory.
+
+
 
