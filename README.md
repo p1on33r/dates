@@ -20,5 +20,15 @@ Builds date.jar in build/lib directory.
 
 Also, you can check tests and code coverage with `gradle test` and `gradle jacocoTestReport` commands. Reports are created in build/reports folder.
 
+# Executable
+Command
+```
+$ java -cp dates.jar net.dates.SpanishDate <day of year> <isLeap>
+```
+Prints
+```
+18 de noviembre
+```
+
 
 
