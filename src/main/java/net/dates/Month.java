@@ -5,21 +5,34 @@ package net.dates;
  * @author meguia
  *
  */
-public class Month {
-	
-	private String name;
+public enum Month {
+	JANUARY("enero", 31),
+	FEBRUARY("febrero", 59),
+	MARCH("marzo", 90),
+	APRIL("abril", 120),
+	MAY("mayo", 151),
+	JUNE("junio", 181),
+	JULY("julio", 212),
+	AUGUST("agosto", 243),
+	SEPTEMBER("septiembre", 273),
+	OCTOBER("octubre", 304),
+	NOVEMBER("noviembre", 334),
+	DECEMBER("diciembre", 365),
+	;
+
+	private String nameInSpanish;
 	private Integer lastDay;
 	
-	public Month(String name, Integer lastDay) {
+	Month(String nameInSpanish, Integer lastDay) {
+		this.nameInSpanish = nameInSpanish;
 		this.lastDay = lastDay;
-		this.name = name;
 	}
 
 	/**
-	 * @return month name
+	 * @return month name in spanish
 	 */
-	public String getName() {
-		return name;
+	public String getNameInSpanish() {
+		return nameInSpanish;
 	}
 
 	/**
