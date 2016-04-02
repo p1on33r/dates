@@ -1,4 +1,4 @@
-package dates;
+package net.dates;
 
 import static org.junit.Assert.*;
 import net.dates.DateUtils;
